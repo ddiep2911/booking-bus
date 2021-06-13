@@ -1,0 +1,22 @@
+<div class="container bg-dark">
+    <div class="row">
+        <div class="col-md-6 text-center">
+            <ng-container *ngFor="let itemGhe of mangGhe ; let index = index">
+                <app-ghe [tenGhe]="itemGhe" (eventAddGhe)="datGhe($event,itemGhe)"></app-ghe>
+                <br *ngIf="index % 4 === 0">
+            </ng-container>
+        </div>
+
+        <div class="col-md-6 text-white">
+            <h2>Danh Sách Ghế</h2>
+            <div *ngFor="let ghe of danhSachGheDaDat">
+                <span>Ghế : {{ghe.TenGhe}} </span>
+                <span>Giá : {{ghe.Gia}}$ </span>
+            </div>
+
+            <div>Tổng ghế đang đặt : {{gheDaDat}} </div>
+            <div>Số ghế còn lại : {{gheConLai}} </div>
+        </div>
+    </div>
+
+</div>
